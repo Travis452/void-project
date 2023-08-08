@@ -1,38 +1,43 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* Search Bar */
+
+
+.input-search {
+  width: 100%; /* Adjust input width within the search bar */
+  padding: 6px 10px; /* Adjust padding for input */
+  font-size: 14px; /* Adjust font size for input */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Apply custom styles directly to InputGroup component */
+.input-group.search-bar {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%; /* Adjust width as needed */
+  margin: 0 auto; /* Center the search bar horizontally */
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: black;
+  color: white; /* Change text color to white */
+  margin-bottom: 2rem;
+  min-height: 6rem;
+}
+
+.navbar-container{
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-text{
+  margin-left: 5rem;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
