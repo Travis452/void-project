@@ -21,10 +21,14 @@ body {
   margin: 0 auto; /* Center the search bar horizontally */
 }
 
+ .navbar-container .search-button {
+  background-color: black;
+}
+
 /* NAVBAR */
 .navbar {
   background-color: black;
-  color: white; /* Change text color to white */
+  color: #9754CB; /* Change text color to white */
   margin-bottom: 2rem;
   min-height: 6rem;
 }
@@ -32,12 +36,35 @@ body {
 .navbar-container{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
 }
 
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
 .navbar-text{
-  margin-left: 5rem;
+  margin-right: 20px;
   
 }
 
+.nav-links a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  margin-right: 200px;
+}
+
+.nav-right a {
+  color: white;
+  margin-left: 30px;
+  font-size: 18px;
+  text-decoration: none;
+}
