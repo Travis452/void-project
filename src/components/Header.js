@@ -15,7 +15,7 @@ const Header = () => {
                         <span className='nav-links'>
                             <a href='/upload'>Upload</a>
                             <a href='home'>Home</a>
-                            <a href='/projects'>Project</a>
+                            <a href='/projects'>Projects</a>
                         </span>
                     </h5>
                 </div>
