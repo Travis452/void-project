@@ -75,13 +75,27 @@ body {
 
 /* Project component */
 
-.project-card{
-  width: 700px;
+
+ .project-card.card {
+  min-width: 700px;
+  margin-bottom: 20px;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  
 }
 
 .project-info {
   display: flex;
-  justify-content: space-between;
+  
+  
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 }
 
 .project-button {

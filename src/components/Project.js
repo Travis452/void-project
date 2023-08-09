@@ -1,4 +1,4 @@
-import { Card, CardBody, Col } from 'reactstrap';
+import { Card, CardBody, } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faRetweet, faDownload } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,23 +12,20 @@ const Project = ({ title, creator, description, audioSrc }) => {
         <Card className='project-card'>
             <CardBody>
                 <div className='project-info'>
-                    <Col>
-                        <h5>{creator}</h5>
 
-                    </Col>
-                    <Col>
-                        <p>{title}</p>
-                    </Col>
+                    <h5>{creator}</h5>
                 </div>
+                <p>{title}</p>
+
                 <audio src={audioSrc} controls className='audio-player' />
-                <Col>
+                <div>
                     <FontAwesomeIcon icon={faHeart} className='project-button' />
                     <FontAwesomeIcon icon={faRetweet} className='project-button' />
                     <a href={audioSrc} download>
                         <FontAwesomeIcon icon={faDownload} className='project-button' />
                     </a>
 
-                </Col>
+                </div>
             </CardBody>
         </Card>
     );
