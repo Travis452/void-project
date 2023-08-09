@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { InputGroup, Input, Button } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const SearchBar = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -18,8 +20,8 @@ const SearchBar = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
             />
 
-            <Button color='primary' onClick={handleSearch}>
-                Search
+            <Button className='search-button' onClick={handleSearch}>
+                <FontAwesomeIcon icon={faSearch} />
             </Button>
 
         </InputGroup>
