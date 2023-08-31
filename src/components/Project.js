@@ -1,4 +1,4 @@
-import { Card, CardBody, } from 'reactstrap';
+import { Card, CardBody } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faRetweet, faDownload } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,7 +15,8 @@ const Project = ({ title, creator, description, audioSrc }) => {
 
                     <h5>{creator}</h5>
                 </div>
-                <p>{title}</p>
+                <h5>{title}</h5>
+                <p>{description}</p>
 
                 <audio src={audioSrc} controls className='audio-player' />
                 <div>
@@ -26,6 +27,7 @@ const Project = ({ title, creator, description, audioSrc }) => {
                     </a>
 
                 </div>
+
             </CardBody>
         </Card>
     );

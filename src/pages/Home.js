@@ -5,7 +5,9 @@ const Home = () => {
         <div>
             <Header />
             <div className='home-container'>
-                <ProjectList />
+                <div className='project-container'>
+                    <ProjectList />
+                </div>
             </div>
         </div>
     );

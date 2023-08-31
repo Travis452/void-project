@@ -1,9 +1,17 @@
-import { Navbar, NavbarBrand } from 'reactstrap';
+import { useState } from 'react';
+import { Navbar, NavbarBrand, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faEnvelope, faBell } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import SearchBar from './Searchbar';
 
 const Header = () => {
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
+
     return (
         <Navbar sticky='top' expand='md'>
             <div className='navbar-container'>
@@ -13,25 +21,45 @@ const Header = () => {
                     </h1>
                     <h5 className='navbar-text'>
                         <span className='nav-links'>
-                            <a href='/upload'>Upload</a>
-                            <a href='home'>Home</a>
-                            <a href='/projects'>Projects</a>
+                            <Link to='/'>Home</Link>
+                            <Link to='/upload'>Upload</Link>
+
                         </span>
                     </h5>
                 </div>
 
                 <SearchBar />
 
+
+
                 <div className='nav-right'>
-                    <a href='/profile'>
-                        <FontAwesomeIcon icon={faUser} />
-                    </a>
-                    <a href='/messages'>
+
+                    <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
+                        <DropdownToggle tag='span'>
+
+                            <FontAwesomeIcon icon={faUser} />
+
+                        </DropdownToggle>
+                        <DropdownMenu className='profile-dropdown' right>
+                            <DropdownItem>
+                                <Link to='/projects'>Projects</Link>
+                            </DropdownItem>
+                            <DropdownItem>
+                                <Link to='/edit-profile'>Edit Profile</Link>
+                            </DropdownItem>
+                            <DropdownItem divider />
+                            <DropdownItem>
+                                <Link to='/sign-out'>Sign Out</Link>
+                            </DropdownItem>
+                        </DropdownMenu>
+                    </Dropdown>
+
+                    <Link to='/messages'>
                         <FontAwesomeIcon icon={faEnvelope} />
-                    </a>
-                    <a href='/notifications'>
+                    </Link>
+                    <Link to='/notifications'>
                         <FontAwesomeIcon icon={faBell} />
-                    </a>
+                    </Link>
                 </div>
             </div>
 

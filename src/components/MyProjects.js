@@ -1,13 +1,13 @@
-import Project from './Project.js';
-//import projectData from '../projectData.js';
+import Project from './ProfileProject.js';
+import projectData from '../projectData.js';
 
-import { useUploadContext } from '../context/UploadContext.js';
-const ProjectList = () => {
-    const { uploadedData } = useUploadContext();
+
+const MyProjects = () => {
+
     return (
         <div className='project-list'>
 
-            {uploadedData.map((project) => (
+            {projectData.map((project) => (
 
                 <Project
                     creator={project.creator}
@@ -25,4 +25,4 @@ const ProjectList = () => {
     );
 };
 
-export default ProjectList;
+export default MyProjects;
