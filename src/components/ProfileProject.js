@@ -3,15 +3,28 @@ import { Card, CardBody, Button, Modal, ModalHeader, ModalBody, ModalFooter, For
 import { Formik, Form, Field } from 'formik';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
+//import projectData from '../projectData.js';
 
 
 
 
-const ProfileProject = ({ title, creator, description, audioSrc }) => {
+const ProfileProject = ({ id, title, creator, description, audioSrc, updateProjects, projects }) => {
 
-    console.log('audioSrc:', audioSrc);
+
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+    const handleDeleteProject = () => {
+        const updatedProjectData = projects.filter(project => project.title !== title);
+        console.log('project deleted:', updatedProjectData)
+
+        updateProjects(updatedProjectData)
+
+
+    }
+
+
 
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
@@ -35,6 +48,7 @@ const ProfileProject = ({ title, creator, description, audioSrc }) => {
                     </a>
 
                     <Button className='edit-button' onClick={toggleModal}>Edit</Button>
+                    <Button className='delete-button' onClick={handleDeleteProject}>Delete</Button>
 
                 </div>
 

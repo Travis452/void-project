@@ -124,6 +124,10 @@ body {
   background-color: #9754CB;
 }
 
+.delete-button.btn {
+  margin-left: 200px;
+}
+
 .audio-player {
   width: 100%;
   height: 50px;
